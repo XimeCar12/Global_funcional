@@ -4,7 +4,8 @@ from FuncionQR import *
 import datetime
 import locale
 locale.setlocale(locale.LC_ALL, '')
-ruta="C:/Users/Aula 25/Desktop/globalX/"
+ruta="C:/Users/Aula 25/Desktop/funcional/"
+
 nombreQR = ruta + "miQR.png"
 
 def generarPDF(listaNombre,listaEdades):
@@ -12,10 +13,21 @@ def generarPDF(listaNombre,listaEdades):
     nombreArchivo=ruta+"reporteGlobal"+fecha_actual.strftime('%d_%m_%Y_%H_%M_%S')+".pdf"
     generarQR(nombreQR,"hola desde la funcion")
     c= canvas.Canvas(nombreArchivo)
-    xInicial =200
-    yInicial = 700
-    c.drawString(xInicial,yInicial,"Edad")
-    c.drawString(xInicial+120,yInicial,"Nombre")
+    """xInicial =200
+    yInicial = 700"""
+    c.drawString(200,780,"MUSA nail's")
+
+    c.setFont('Helvetica-Bold', 16)
+    c.drawString(40,750, "Cliente:")
+    c.drawString(180,750,)
+    c.drawString(40,730, "Fecha:")
+    c.drawString(180,730,)
+
+    c.drawString(250,660, "Productos")
+
+    x = 0
+    y = A4[1]- 190
+    c.line(x, y, x + 880, y)
 
     c.drawImage(nombreQR,200,400,100,100)
     for i in range(len(listaNombre)):

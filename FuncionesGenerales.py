@@ -1,5 +1,6 @@
 from FuncionesPDF import*
 from Datosestaticos import*
+import os
 listaNombre = []
 listaEdades = []
 def menu():
@@ -10,28 +11,45 @@ def menu():
         print("3.Lista de Servicios")
         print("4.Lista de Productos")
         print("5.Lista de Diseños")
-        print("6.")
-        print("7. Generar PDF")
-        print("8. Generar QR")
+        print("6.Lista de Trabajadores")
+        print("7.Combos")
+        print("8. Generar PDF")
+        print("9. Generar QR")
         print("0. Salir")
         opcion = int(input("Elige una opcion "))
+        os.system('cls')
         if(opcion ==1):
             pedirDatos()
         elif(opcion==2):
-            imprimirdatos()
+            Clientes()
         elif(opcion==3):
             Servicios()   
+            input("Presione enter para continuar")
+            os.system('cls')
         elif(opcion==4):
-            Productos()
+            print("----Productos----")
+            Productos()    
+            input("Presione enter para continuar")
+            os.system('cls')
         elif(opcion==5):
-            ()
+            Diseños()    
+            input("Presione enter para continuar")
+            os.system('cls')
+        elif(opcion==6):
+            Trabajadores() 
+            input("Presione enter para continuar")
+            os.system('cls') 
         elif(opcion==7):
+            print("----Combos----")
+            Combos()    
+            input("Presione enter para continuar")
+            os.system('cls')
+        elif(opcion==8):
             generarPDF(listaNombre,listaEdades)
 
 def pedirDatos():
     listaClientes.append(input("Ingresa el nombre tu usuario: "))
     print("Guardado")
 
-def imprimirdatos():
-    for i in range(len(listaNombre)):
-        print(f"Nombre:{listaNombre[i]} Edad: {listaEdades[i]}")        
+def imprimirdatos(listaClientes):
+    print(f"----Clientes----: {listaClientes}")       
